@@ -1,0 +1,110 @@
+<!-- This is a first example of using a template -->
+<html>
+
+<head>
+
+    <!-- include our libraries and css files -->
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/tech.js"></script>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/gallery.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Welcome To My First Static Website</h1>
+        </div>
+        <ul class="nav nav-tabs">
+            <li role="" class="active"><a href="index.html">Home</a></li>
+            <li role=""><a href="#te" id="lol">Technology</a></li>
+            <li role=""><a href="#po" id="lol2">Politics</a></li>
+            <li role=""><a href="#yo">Youtube</a></li>
+            <li role=""><a href="#af">Amazing Facts</a></li>
+            <li role=""><a href="#et">Entertainment</a></li>
+            <li role=" "><a href="#fc">Fast Check</a></li>
+            <li role=" "><a href="#Sc">Science</a></li>
+            <li role=" "><a href="#co">Compare</a></li>
+        </ul>
+        <br>
+        <ol class="breadcrumb ">
+            <li><a href="index.html ">Home</a></li>
+        </ol>
+
+        <div class="container">
+            <div class="page-header" id="te">
+                <h1>Technology World</h1>
+            </div>
+            <ul class="nav nav-tabs">
+                <li role="" id="mobbtn" class="active"><a href="#">Mobiles</a></li>
+                <li role="" id="gamebtn"><a href="#">Gaming</a></li>
+                <li role="" id="pcbtn"><a href="#">PC/Laptops</a></li>
+                <li role="" id="tvbtn"><a href="#">Smart TV</a></li>
+                <li role="" id="iotbtn"><a href="#">IOT</a></li>
+                <li role="" id="wearablebtn"><a href="#">Wearables</a></li>
+            </ul>
+            <br>
+            <div id="content" class="container-fluid" role="main">
+            </div>
+
+            <div class="page-header" id="po">
+                <h1>Politics World</h1>
+            </div>
+            <ul class="nav nav-tabs">
+                <li role="" id="ndabtn"><a href="#">NDA</a></li>
+                <li role="" id="upabtn"><a href="#">UPA</a></li>
+                <li role="" id="ssbtn"><a href="#">Shivsena</a></li>
+                <li role="" id="spbtn"><a href="#">SP</a></li>
+                <li role="" id="tmcbtn"><a href="#">TMC</a></li>
+                <li role="" id="bspbtn"><a href="#">BSP</a></li>
+            </ul>
+            <br>
+            <div id="content1" class="container-fluid" role="main">
+            </div>
+        </div>
+        <script id="image-template" type="text/x-handlebars-template ">
+
+            <div class="row ">
+                {{#each images}}
+                <div class="col-md-3 col-sm-6 col-xs-3">
+                    <div class="thumbnail " data-id="{{@index}} ">
+                        <h1>{{title}}</h1>
+                        <h3 class="author ">
+                            {{author}}
+                        </h3>
+                        <p>{{name}}</p>
+                        <img style="max-height:200px " src="{{src}} " class="crop-img" />
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </script>
+
+        <script id="mob-template" type="text/x-handlebars-template">
+            <div class="row">
+                {{#each mob_images}}
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="thumbnail" data-id="{{@index}}">
+                        <h1>{{title}}</h1>
+                        <h3 class="author">
+                            {{author}}
+                        </h3>
+                        <p>{{name}}</p>
+                        <img style="max-height:200px" src="{{src}}" class="crop-img" />
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+        </script>
+    </div>
+</body>
+
+</html>

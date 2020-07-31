@@ -1,0 +1,83 @@
+<head>
+
+    <!-- include our libraries and css files -->
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/data.js"></script>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/gallery.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Politics In The World</h1>
+        </div>
+        <ul class="nav nav-tabs">
+            <li role=""><a href="index.html">Home</a></li>
+            <li role=""><a href="techno.html">Technology</a></li>
+            <li role=""><a href="poli.html">Politics</a></li>
+            <li role=""><a href="youtube.html">Youtube</a></li>
+            <li role=""><a href="Amazing-Facts.html">Amazing Facts</a></li>
+            <li role=""><a href="Entertainment.html">Entertainment</a></li>
+            <li role=" "><a href="Fast-Check.html ">Fast Check</a></li>
+            <li role=" "><a href="Science.html ">Science</a></li>
+            <li role=" "><a href="compare.html ">Compare</a></li>
+        </ul>
+        <br>
+
+        <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="poli.html">Politics</a></li>
+        </ol>
+
+        <ul class="nav nav-tabs">
+            <li role="" id="detailsbtn"><a href="#">Details</a></li>
+            <li role="" id="modalbtn"><a href="#">Modal</a></li>
+        </ul>
+        <div id="content" class="container-fluid" role="main">
+        </div>
+    </div>
+    <script id="image-template" type="text/x-handlebars-template">
+
+        <div class="row">
+            {{#each p_images}}
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail" data-id="{{@index}}">
+                    <h1>{{title}}</h1>
+                    <h3 class="author">
+                        {{author}}
+                    </h3>
+                    <p>{{name}}</p>
+                    <img style="max-height:200px" src="{{src}}" />
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </script>
+    <script type="text/javascript">
+        // grab our template code from the DOM
+        var source = $("#image-template").html();
+
+        // compile the template so we can use it
+        var template = Handlebars.compile(source);
+
+        $("#detailsbtn").click(function() {
+            var html = template(data);
+            $('#content').html(html);
+        });
+
+        $("#modalbtn").click(function() {
+            var html = template(data);
+            $('#content').html(html);
+        });
+    </script>
+
+
+</body>
